@@ -3,9 +3,9 @@ package hw2;
 import java.util.Scanner;
 
 public class Task4 {
-    public static void main(String[] args) throws MyException {
+    public static void main(String[] args) {
         Task4 task = new Task4();
-        StringBuilder value = new StringBuilder(new String()); ;
+        StringBuilder value = new StringBuilder();
         while (value.isEmpty()) {
             try {
                 value = task.inputStr();
