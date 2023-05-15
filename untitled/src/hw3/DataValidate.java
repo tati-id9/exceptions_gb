@@ -13,16 +13,16 @@ public class DataValidate {
         Matcher passwordMatcher = myPattern.matcher(password);
         try {
             if (!loginMatcher.matches()) {
-                throw new WrongLoginException("Логин содержит недопустимые символы");
+                throw new WrongLoginException("Логин содержит недопустимые символы. Логин должен содержать только латинские буквы, цифры и знак подчеркивания.");
             }
             if (login.length() > 19) {
-                throw new WrongLoginException("Логин слишком длинный");
+                throw new WrongLoginException("Длина логина должна быть меньше 20 символов");
             }
             if (!passwordMatcher.matches()) {
-                throw new WrongPasswordException("Пароль содержит недопустимые символы");
+                throw new WrongPasswordException("Пароль содержит недопустимые символы. Пароль должен содержать только латинские буквы, цифры и знак подчеркивания.");
             }
             if (password.length() > 19) {
-                throw new WrongPasswordException("Пароль слишком длинный");
+                throw new WrongPasswordException("Длина пароля должна быть меньше 20 символов");
             }
             if (!password.equals(confirmPassword)) {
                 throw new WrongPasswordException("Неверное подтверждение пароля");
